@@ -1,0 +1,11 @@
+name: vanilla-extended
+version: '${version}'
+main: fr.elite.vanillaextended.Main
+api-version: '1.20'
+commands:
+  tpa:
+    description: Ask to teleport to another player.
+    usage: /tpa <Player>
+  tpok:
+    description: Accept the teleportation of the requester.
+    usage: /tpok

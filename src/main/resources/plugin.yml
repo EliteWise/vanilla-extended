@@ -1,0 +1,14 @@
+name: VanillaExtended
+version: 1.0.0
+main: fr.elite.vanillaextended.Main
+description: Simple features to improve Vanilla servers
+author: Eliteman
+api-version: '1.20'
+commands:
+  tpa:
+    description: Ask to teleport to another player.
+    usage: /tpa <Player>
+  tpok:
+    description: Accept the teleportation of the requester.
+    usage: /tpok
+  spawn:
