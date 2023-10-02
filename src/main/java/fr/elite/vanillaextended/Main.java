@@ -42,19 +42,12 @@ public class Main extends JavaPlugin implements Listener {
         player.setPlayerListName("[" + formatBiomeName(playerBiome) + "] " + player.getName());
     }
 
-    private final Map<Player, Biome> previousBiomes = new HashMap<>();
-
     @EventHandler
     public void PlayerChangeBiome(PlayerMoveEvent e) {
         Player movingPlayer = e.getPlayer();
         Biome currentBiome = movingPlayer.getLocation().getBlock().getBiome();
-        Biome previousBiome = previousBiomes.get(movingPlayer);
-
-        if(previousBiome != null && previousBiome == currentBiome) return;
 
         movingPlayer.setPlayerListName("[" + formatBiomeName(currentBiome.toString()) + "] " + movingPlayer.getName());
-
-        previousBiomes.put(movingPlayer, currentBiome);
     }
 
 }

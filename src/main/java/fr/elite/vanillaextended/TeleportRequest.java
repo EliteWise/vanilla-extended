@@ -23,8 +23,9 @@ public class TeleportRequest implements CommandExecutor {
 
                 if(command.getName().equalsIgnoreCase("tpa")) {
                     if(args.length == 1) {
-                        if(Bukkit.getOnlinePlayers().stream().anyMatch(p -> p.name().toString().equalsIgnoreCase(args[0]))) {
-                            player.sendMessage(player.getName() + " wants to teleport to you!");
+                        if(Bukkit.getOnlinePlayers().stream().anyMatch(p -> p.getName().equalsIgnoreCase(args[0]))) {
+                            player.sendMessage("Teleport request sent!");
+                            Bukkit.getPlayer(args[0]).sendMessage(player.getName() + " wants to teleport to you! /tpok to accept.");
                             teleportRequests.put(Bukkit.getPlayer(args[0]), player);
                         } else {
                             player.sendMessage("The player doesn't exist or is not connected.");
